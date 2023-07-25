@@ -29,6 +29,25 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .center-div object {
+      width: 60%; /* Adjust as needed */
+      height: 95%; /* Adjust as needed */
+    }
+  </style>
+
+<style>
+        body {
+            background-color: #304154;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -42,7 +61,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <!--a class="navbar-brand" href="index.html">Start Bootstrap</a-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,17 +93,34 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Man must explore, and this is exploration at its greatest</h1>
-                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                        <h1>Math ...</h1>
+                        <h2 class="subheading">Math Description</h2>
+                        <span class="meta"></a>Date</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+ 
+<!--div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <embed src="https://alexander-feng.github.io/Multivariable-Calulus/MVCnotesV5.pdf"
+    	            type="application/pdf" width="1000px" height="950px"/>
+</div-->   
 
-    <!-- Post Content -->
-    <article>
+
+<div class="center-div">
+    <!--object data="path/to/your/document.pdf" type="application/pdf">
+      <embed src="path/to/your/document.pdf" type="application/pdf" />
+    </object-->
+    <object data="https://alexander-feng.github.io/Multivariable-Calulus/MVCnotesV5.pdf"
+ type="application/pdf">
+        <embed src="https://alexander-feng.github.io/Multivariable-Calulus/MVCnotesV5.pdf"
+    	            type="application/pdf" />
+    </object>
+  </div>
+
+ <!-- Post Content -->
+    <!--article>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -125,7 +161,7 @@
                 </div>
             </div>
         </div>
-    </article>
+    </article-->
 
     <hr>
 
