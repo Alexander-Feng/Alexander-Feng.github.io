@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Alex Feng's Github Pages</title>
+    <title>Multivariable Calculus</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,15 @@
     <![endif]-->
 
     <style>
+        p {
+            font-family: 'Open Sans', sans-serif; /* replace 'Open Sans' with 'Lora' or any other font if that's what your title is using */
+            color: #fff;  /* This will make the paragraph text color white */
+        }
+
+        h2 {
+            color: #fff;  /* This will make the paragraph text color white */
+        }
+
         body {
             background-color: #304154;
         }
@@ -63,6 +72,18 @@
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none;  /* Internet Explorer 10+ */
         }
+
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .center-div object {
+      width: 60%; /* Adjust as needed */
+      height: 95%; /* Adjust as needed */
+    }
+
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -74,7 +95,7 @@
                 dh = $(document).height(),
                 wh = $(window).height();
             scrollPercent = (scroll / (dh - wh)) * 100;
-            $('.intro-header').css('background-position-y', -(scrollPercent * 0.3 - 50) + '%');
+            $('.intro-header').css('background-position-y', -(scrollPercent * 0.5 - 50) + '%');
         });
     </script>
 </head>
@@ -117,83 +138,68 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('https://people.math.harvard.edu/~knill/pedagogy/blackboards/blackboard.jpg')">
+    <header class="intro-header" style="background-image: url('https://external-preview.redd.it/PHozjtYZBIsaDpaaR59-lyQUBynV2W1NdlbUXQvK8OY.jpg?auto=webp&s=94fc05c75fdd45fb29b893688c6e6a989a88c363')">
         <div class="container">
             <div class="row" style="position: relative; z-index: 1;">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Alex Feng</h1>
+                        <h1>Multivariable Calculus</h1>
                         <hr class="small">
-                        <span class="subheading">Here are my notes for math :D</span>
+                        <span class="subheading">∇ Gradient, Divergence, Curl, and more!</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="MVC.html">
-                        <h2 class="post-title">
-                            Multivariable Calulus
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Gradient, Curl, Divergence, and more!
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Spring 2023</p>
+<!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Notes</h2>
+                    <p>Here are my notes for Multivariable Calculus :D</p>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Differential Equations
-                        </h2>
-                        <h3 class="post-subtitle">
-                            ...
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Summer 2023</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="LA.html">
-                        <h2 class="post-title">
-                            Linear Algebra
-                        </h2>
-                        <h3 class="post-subtitle">
-                           Matrices, Linear Transformations, and Vector Spaces! 
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Summer 2023</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Discrete Math
-                        </h2>
-                        <h3 class="post-subtitle">
-                            ...
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Summer 2023</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <!--ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul-->
             </div>
         </div>
-    </div>
+    </article-->
 
-    <hr>
+    <!-- Main Content -->
+<div class="center-div">
+    <!--object data="path/to/your/document.pdf" type="application/pdf">
+      <embed src="path/to/your/document.pdf" type="application/pdf" />
+    </object-->
+    <object data="https://alexander-feng.github.io/Multivariable-Calulus/MVCnotesV5.pdf"
+ type="application/pdf">
+        <embed src="https://alexander-feng.github.io/Multivariable-Calulus/MVCnotesV5.pdf"
+    	            type="application/pdf" />
+    </object>
+  </div>
+
+
+<!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Expository Paper</h2>
+                    <p>Here is a quick summary of Multivariable Calculus</p>
+                </div>
+            </div>
+        </div>
+    </article-->
+
+    <!-- Main Content -->
+<div class="center-div">
+    <!--object data="path/to/your/document.pdf" type="application/pdf">
+      <embed src="path/to/your/document.pdf" type="application/pdf" />
+    </object-->
+    <object data="https://alexander-feng.github.io/Multivariable-Calulus/mvc.pdf"
+ type="application/pdf">
+        <embed src="https://alexander-feng.github.io/Multivariable-Calulus/mvc.pdf"
+    	            type="application/pdf" />
+    </object>
+  </div>
 
     <!-- Footer -->
     <footer>
@@ -201,8 +207,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
-                        <!--li>
-                            <a href="#">
+                        <li>
+                            <!--a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -216,8 +222,8 @@
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
-                        </li>
-                        <li-->
+                        </li-->
+                        <li>
                             <a href="https://github.com/Alexander-Feng">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -226,7 +232,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">:D</p>
+                    <p class="copyright text-muted">:)</p>
                 </div>
             </div>
         </div>
