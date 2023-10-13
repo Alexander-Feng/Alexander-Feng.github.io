@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Alex Feng's Github Pages</title>
+    <title>Discrete Math</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,15 @@
     <![endif]-->
 
     <style>
+        p {
+            font-family: 'Open Sans', sans-serif; /* replace 'Open Sans' with 'Lora' or any other font if that's what your title is using */
+            color: #fff;  /* This will make the paragraph text color white */
+        }
+
+        h2 {
+            color: #fff;  /* This will make the paragraph text color white */
+        }
+
         body {
             background-color: #304154;
         }
@@ -62,6 +71,17 @@
         html, body {
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .center-div object {
+            width: 60%; /* Adjust as needed */
+            height: 95%; /* Adjust as needed */
         }
     </style>
 
@@ -122,78 +142,38 @@
             <div class="row" style="position: relative; z-index: 1;">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Alex Feng</h1>
+                        <h1>Discrete Math</h1>
                         <hr class="small">
-                        <span class="subheading">Here are my notes for math :D</span>
+                        <span class="subheading">Logic, Set theory, and Combinatorics!</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="MVC.html">
-                        <h2 class="post-title">
-                            Multivariable Calulus
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Gradient, Curl, Divergence, and more!
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Spring 2023</p>
+<!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Notes</h2>
+                    <p>Here are my Discrete Math notes :D</p>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="ODE.html">
-                        <h2 class="post-title">
-                            Differential Equations
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Solutions to many Ordinary Differential Equations
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Summer 2023</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="LA.html">
-                        <h2 class="post-title">
-                            Linear Algebra
-                        </h2>
-                        <h3 class="post-subtitle">
-                           Matrices, Linear Transformations, and Vector Spaces! 
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Summer 2023</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href=DM.html>
-                        <h2 class="post-title">
-                            Discrete Math
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Logic, Set theory, and Combinatorics!
-                        </h3>
-                    </a>
-                    <p class="post-meta"></a>Summer 2023</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <!--ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul-->
             </div>
         </div>
-    </div>
+    </article-->
 
-    <hr>
+    <!-- Main Content -->
+<div class="center-div">
+    <!--object data="path/to/your/document.pdf" type="application/pdf">
+      <embed src="path/to/your/document.pdf" type="application/pdf" />
+    </object-->
+    <object data="https://alexander-feng.github.io/Discrete_Math_Notes.pdf"
+ type="application/pdf">
+        <embed src="https://alexander-feng.github.io/Discrete_Math_Notes.pdf"
+    	            type="application/pdf" />
+    </object>
+  </div>
 
     <!-- Footer -->
     <footer>
