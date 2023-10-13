@@ -1,0 +1,216 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+\title{ODE Notes}
+\author{Alex Feng}
+\date{June 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{First Order Equations}
+\subsection{Linear Equations}
+An ODE is linear in $y$ if it can be expressed as 
+$$a_n (x) y ^ {(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 (x) y - g(x) = 0$$
+A linear equation is homogeneous when $g(x) = 0$. A linear first-order equation can be solved using an integrating factor $e^{\int P(x) dx}$. Starting with the standard form, 
+$$\frac{dy}{dx} + P(x)y = f(x)$$
+$$\frac{dy}{dx} e^{\int P(x) dx} + P(x)y e^{\int P(x) dx} = f(x)e^{\int P(x) dx}$$
+$$ye^{\int P(x) dx} =c+ \int f(x)e^{\int P(x) dx} dx$$
+$$y = ce^{-\int P(x) dx} + e^{-\int P(x) dx}\int f(x)e^{\int P(x) dx} dx$$
+\subsection{Exact Equations}
+$M(x,y) dx + N(x,y) dy$ is an exact differential if it corresponds to the differential of some function $f(x,y)$.
+$$M(x,y) dx + N(x,y) dy = 0 $$
+is an exact equation since the left hand side is an exact differential, and implies $f(x,y) = c$. Intuitively, $M(x,y)dx + N(x,y) dy $ must be an exact differential if 
+$$\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$$
+After checking that the equation is exact, it can be solved starting with the equation in the form
+$$M(x,y) dx + N(x,y) dy = 0 $$
+$$\frac{\partial f}{\partial x} = M(x,y)$$
+$$f(x,y) = g(y) + \int M(x,y) dx$$
+$$\textrm{(the function }g(y)\textrm{ is the ``constant" of integration here)}$$
+$$\frac{\partial f}{\partial y} =   g'(y) + \frac{\partial}{\partial y} \int M(x,y) dx = N(x,y)$$
+The last two equations can be used to find a function $f(x,y)$ for the implicit solution $f(x,y) = c$. \\A non-exact equation can sometimes be turned into an exact equation using an integrating factor $\mu (x,y)$. To avoid solving a PDE, $\mu$ can only be a function of a single variable. For the non-exact equation $M(x,y) dx + N(x,y) dy = 0 $,
+if $(M_y - N_x)/N$ is only a function of x,
+$$\mu (x) = e^{\int \frac{M_y - N_x}{N} dx}$$
+if $(N_x - M_y)/M$ is only a function of y,
+$$\mu(y)= e^{\int \frac{N_x - M_y}{M} dy}$$
+\subsection{Homogeneous Functions}
+A function that has the property
+$$f(tx,ty) = t^\alpha f(x,y)$$
+is a homogeneous function of degree $\alpha$. A first-order DE in differential form
+$$M(x,y) dx + N(x,y) dy = 0$$
+is homogeneous if $M$ and $N$ are homogeneous equations of the same degree. This type of equation can be solved using the substitution
+$$x = uy \textrm{ or } y = ux$$
+For the substitution $x=uy$,
+$$y^\alpha M(u,1) d(uy) +y^\alpha N(u,1) dy = 0$$
+$$M(u,1)ydu + M(u,1) udy + N(u,1) dy = 0$$
+$$\frac{M(u,1) du}{M(u,1)u + N(u,1)} = -\frac{dy}{y}$$
+The other substitution, $y=ux$, is similar. 
+
+\section{Higher Order Equations}
+Let $y_1 , y_2 , \dots , y_n$ be solutions to a linear $n$th order differential equation on an interval $I$. The set of solutions are linearly independent iff the Wronskian, 
+$$W(y_1 , y_2 , \dots , y_n) = \begin{vmatrix}
+    y_1 & y_2 & \cdots & y_n \\
+    y_1 ' & y_2 ' & \cdots & y_n '\\
+    \vdots & \vdots & \ddots & \vdots \\
+    y_1 ^{(n-1)} & y_2 ^{(n-1)} & \cdots & y_n ^{(n-1)}
+\end{vmatrix} \neq 0$$
+\subsection{Reduction of Order}
+For a homogeneous second order differential equation
+$$a_2 (x) y '' + a_1 (x) y' + a_0 (x) y = 0$$
+if a solution $y_1$ is already known, the second solution can be written as $ y_2 = u y_1$. Substituting $y_2$ into the equation, 
+$$a_2 (x) (u'' y_1 + 2u'y_1' + u y_1 '') + a_1 (x) (u' y_1 + u y_1 ') + a_0 (x) u y_1 = 0$$
+$$a_2 (x) (u'' y_1 + 2u' y_1 ') + a_1 (x) (u' y_1 ) + u(a_2 (x) y_1 '' + a_1 (x) y_1 ' + a_0 (x) y_1 = 0$$
+$$a_2 (x) (u'' y_1 + 2u' y_1 ') + a_1 (x) (u' y_1 ) = 0$$
+This equation has now been reduced to a first order equation in terms of $u'$.
+$$u' = e^{\int -(a_1(x) y_1 - 2a_2 (x) y_1 ')/a_2(x) \hspace{2pt}dx}$$
+$$y_2 = y_1 \int e^{\int -(a_1(x) y_1 - 2a_2 (x) y_1 ')/a_2(x) \hspace{2 pt} dx} dx$$
+
+\subsection{Linear Equations with Constant Coefficients}
+To find solutions of an auxiliary equation
+$$a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = 0$$
+where $\forall i = 0, 1, \dots n, a_i$ is constant, use the substitution $y = e^{mx}$.
+$$e^{mx} (a_n m^n + a_{n-1} m^{n-1} + \cdots + a_1 m + a_0 )= 0$$
+$$a_n m^n + a_{n-1} m^{n-1} + \cdots + a_1 m + a_0  = 0$$
+For any repeated root $m = p$, repeated $j$ times, the general solution will be a linear combination of $e^{q x}$, for all single roots $q$, and $e^{px}, xe^{px}, \dots , x^j e^{px}$ for all repeated roots $p$. Additionally, for an equation 
+$$a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x)$$
+the general solution will be the sum of the solution to the corresponding auxiliary equation ($g(x) = 0$) and any particular solution $y_p$. $y_p$ can be found using the undetermined coefficients method. 
+
+\subsection{Variation of Parameters}
+Variation of parameters can be used to solve an equation in the form
+$$y'' + P(x)y' + Q(x) y = f(x)$$
+Let $y_1$ and $y_2$ be in the fundamental set of solutions for the associated homogeneous equation. The solution must be in the form
+$$y_p = u_1(x) y_1 (x) + u_2 (x) + y_2 (x)$$
+$$y_p ' = u_1 ' y_1 + y_1 ' u_1 + u_2 ' y_2 + y_2 ' u_2$$
+$$y_p '' = u_1 '' y_1 + u_1 ' y_1 ' + u_1 ' y_1 ' + u_1 y_1 ''+ u_2 '' y_2 + u_2 ' y_2 ' + u_2 ' y_2 ' + u_2 y_2 ''$$
+$$y'' + P(x)y' + Q(x) y$$ 
+$$= u_1 '' y_1 + u_1 ' y_1 ' + u_1 ' y_1 ' + u_1 y_1 ''+ u_2 '' y_2 + u_2 ' y_2 ' + u_2 ' y_2 ' + u_2 y_2 '' + P(u_1 ' y_1 + y_1 ' u_1 + u_2 ' y_2 + y_2 ' u_2) + Q(u_1 y_1 + u_2 + y_2 )$$
+$$=u_1 (y_1 '' + P y_1 ' + Q y_1 ) + u_2 (y_2 '' + P y_2 ' + Q y_2) + u_1 '' y_1 + u_1 ' y_1 ' + u_2 '' y_2 + u_2 ' y_2 ' + P(y_1 u_1 ' + y_2 u_2 ') + y_1 ' u_1 ' + y_2 ' u_2 '$$
+$$= \frac{d}{dx}(u_1 ' y_1 + u_2 ' y_2) + P(y_1 u_1 ' + y_2 u_2 ') + y_1 ' u_1 ' + y_2 ' u_2 ' = f(x)$$
+Assuming 
+$$u_1 ' y_1 + u_2 ' y_2 =0 $$
+$$y_1 ' u_1 ' + y_2 ' u_2 ' = f(x)$$
+$$u_1 ' = \frac{\begin{vmatrix}
+    0 & y_2 \\
+    f(x) & y_2 ' 
+\end{vmatrix}}{W}$$
+$$u_2 ' = \frac{\begin{vmatrix}
+    y_1 & 0 \\
+    y_1 ' & f(x)
+\end{vmatrix}}{W}$$
+For the Wronskian of $y_1$ and $y_2$
+$$W = \begin{vmatrix}
+    y_1 & y_2 \\
+    y_1 ' & y_2 '
+\end{vmatrix}$$
+$$y_p = -y_1 \int \frac{y_2 f(x)}{W} dx + y_2 \int \frac{y_1 f(x)}{W} dx$$
+For an $n$th order equation, 
+
+$$W_m = \begin{vmatrix}
+    y_1 & y_2 & \cdots & y_{m-1} & 0 & y_{m+1} & \cdots & y_{n} \\
+    y_1 ' & y_2 '& \cdots & y_{m-1} '& 0 & y_{m+1} '& \cdots & y_{n} '\\
+    \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+    y_1 ^{(n-2)}& y_2 ^{(n-2)}& \cdots & y_{m-1} ^{(n-2)}& 0 & y_{m+1} ^{(n-2)}& \cdots & y_{n} ^{(n-2)} \\
+    y_1 ^{(n-1)}& y_2 ^{(n-1)}& \cdots & y_{m-1} ^{(n-1)}& f(x) & y_{m+1} ^{(n-1)}& \cdots & y_{n} ^{(n-1)} \\
+\end{vmatrix} $$
+$$u_m ' = \frac{W_m}{W(y_1, y_2 ,\dots , y_n)}$$
+
+$$y = \sum_{j=1} ^n y_j u_m  = \sum_{j=1} ^n y_j \int \frac{W_j}{W(y_1, y_2 ,\dots , y_n)} dx$$
+\subsection{Cauchy-Euler Equation}
+An equation in the form
+$$a_n x^n \frac{d^n y}{d x^n} + a_{n-1} x^{n-1} \frac{d^{n-1} y}{d x^{n-1}} + \cdots + a_1 x \frac{dy}{dx} + a_0 y = g(x)$$
+with constant coefficients $a_0, a_1 , \dots ,a_n$ can be solved using the substitution $y = x^m$. The auxiliary equation becomes
+$$\sum_{k=0}^{n} a_k \frac{m!}{(m-k)!}x^m = 0$$
+solving for $m$ leads to the general solution. When $m$ is a repeated root, reduction of order can be used to find that the solution would be in the form
+$$y = c_1 x^{m_1} + c_2 x^{m_1}\ln x$$
+
+\section{Series Solutions}
+\subsection{Ordinary Point}
+Equations can be solved using the series $$y = \sum_{n=0}^{\infty} c_n ( x - x_0 )^n$$where $x_0$ is an ordinary point ($P(x)$ and $Q(x)$ in the standard form are both analytic). The radius of convergence is the distance from $x_0$ to the nearest singular point ($P(x)$ and $Q(x)$ are not analytic).
+\subsection{Regular Singular Point}
+$x_0$ is a regular singular point if $p(x) = (x-x_0) P(x)$ and $q(x)= (x-x_0)^2 Q(x)$ are both analytic at $x_0$. A solution can be found using Frobenius' Theorem, 
+$$y = (x-x_0)^r \sum^\infty _{n=0} c_n (x-x_0)^n $$
+where $r$ is a constant to be determined. 
+
+\section{Laplace Transform}
+\subsection{Definition}
+Integral transforms are in the form
+$$\int_0^\infty K(s,t) f(t) dt$$
+where $K(s,t)$ is the kernel of a transform. The Laplace Transform uses $k(s,t) = e^{-st}$. The Laplace Transform of a function $f(t)$ defined for $t \geq 0$ is 
+$$ \mathscr L \{ f(t) \} = \int _0^\infty e^{-st} f(t) dt$$
+$\mathscr L\{ f(t) \}$ exists for $s > c$ if $f$ is piecewise continuous on $\left[ 0, \infty \right)$ and of exponential order $c$. 
+\\\textbf{Transforms of Basic Functions:}
+$$\mathscr L \{1 \}  = \frac{1}{s}$$
+$$\mathscr L \{t^n \}= \frac{n!}{s^{n+1}} , \hspace{10 pt} n = 1, 2, 3, \dots$$
+$$\mathscr L \{e^ {at} \} = \frac{1}{s - a}$$
+$$\mathscr L \{\sin kt \} = \frac{k}{s^2 +k^2}$$
+$$\mathscr L \{\cos kt \} = \frac{s}{s^2 + k^2}$$
+$$\mathscr L \{\sinh kt \} = \frac{k}{s^2 - k^2}$$
+$$\mathscr L \{\cosh kt \} = \frac{s}{s^2 -k^2 }$$
+\subsection{Properties}
+If $f, f', \dots, f^{(n-1)}$ are continuous on $\left[ 0, \infty \right)$ and are of exponential order and if $f^{(n)} (t)$ is piecewise continuous on $\left[0, \infty \right)$, 
+$$\mathscr L \{ f^{(n)} (t) \} = s^n F(s) -s^{n-1} f(0) - s^{n-2} f'(0) - \cdots - f^{(n-1)} (0)$$
+where $F(s) = \mathscr L \{ f(t) \}$.
+\\
+\\If $\mathscr L \{ f(t) \} = F(s)$, then 
+$$\forall a \in \mathbb R ,\mathscr L \{e^{at} f(t) \} = F(s-a)$$
+The unit step function $\mathscr U (t-a)$ is defined to be
+$$\mathscr U (t-a) = \begin{cases} 
+      0, & 0\leq t < a \\
+      1, & t \geq a  
+   \end{cases}$$
+If $F(s) = \mathscr L \{f(t) \}$ and $a > 0$, then 
+$$\mathscr L \{f(t-a) \mathscr U (t-a) \} = e^{-as} F(s)$$
+If $ F(s) = \mathscr L \{f(t) \}$, then 
+$$\forall n \in \mathbb N, \mathscr L \{t^n f(t) \} = (-1)^n \frac{d^n}{ds^n} F(s)$$
+The convolution of two piecewise continuous functions on the inverval $\left[ 0 , \infty \right)$, $f$ and $g$, is defined as
+$$f * g = \int_0 ^t f(\tau ) g( t - \tau ) d\tau$$
+The convolution theorem for Laplace transforms states that
+$$\mathscr L \{ f * g \} = \mathscr L \{f(t)\} \mathscr L \{g(t)\} = F(s)G(s)$$
+The transform of $f(t)$, which is piecewise continuous on $\left[ 0, \infty \right)$, of exponential order, and periodic with period $T$ is
+$$\mathscr L \{ f(t) \} = \frac{1}{1- e^{-sT}} \int^T_0 e^{-st} f(t) dt$$
+\section{Useful Functions}
+\subsection{Dirac Delta}
+The delta function is a piecewise function defined as
+$$\delta_a (t - t_0 ) = \begin{cases}
+    0, & 0 \leq t < t_0 - a \\
+    \frac{1}{2a}, & t_0 - a \leq t < t_a +a \\
+    0, & t \geq t_0 + a
+\end{cases}$$
+It is called a unit impulse since
+$$\int_0^\infty \delta_a(t - t_0 ) dt = 1$$
+The Dirac delta ``function" is defined as
+$$\delta ( t - t_0 ) = \lim_{a \to 0} \delta_a (t - t_0)$$
+It has the following properties:
+$$\delta(t - t_0 ) = \begin{cases}
+    \infty , & t = t_0 \\
+    0, t & \neq t_0
+\end{cases}$$
+$$\int_0^\infty \delta (t - t_0) dt = 1$$
+$$\mathscr L \{ \delta(t - t_0) \} = e^{-st_0}$$
+\subsection{Gamma}
+$$\Gamma (x) = \int_0 ^\infty t^{x-1} e^{-t}$$
+$$\forall n \in \mathbb N, \Gamma (n+1) = n!$$
+\subsection{Bessel Functions}
+$$x^2 y '' + xy' + (x^2 - \nu ^2 ) y = 0$$
+is called a Bessel's equation of order $\nu$. The solution is 
+$$y = c_1 J_\nu (x) + c_2 J_{- \nu } (s), \hspace{10pt} \nu \not\in \mathbb Z$$
+where $J_{\nu} (x)$ is the Bessel function of the first kind, 
+$$J_{\nu} = \sum_{n=0}^{\infty} \frac{(-1)^n}{n!\Gamma (1 + \nu + n)} \left(\frac{x}{2} \right)^{2n + \nu}$$
+Additionally, another solution is 
+$$y = c_1 J_\nu (s) + c_2 Y_\nu (x) , \hspace{10pt} \nu \not\in \mathbb Z$$
+where $Y_\nu (x)$ is the Bessel function of the second kind, 
+$$Y_\nu (x) = \frac{\cos \nu \pi J_\nu (x) - J_{-\nu} (x)}{\sin \nu \pi }$$
+The modified Bessel equation of order $\nu$ is 
+$$x^2 y '' + x y' - (x^2 + \nu ^2 ) y = 0$$
+The solution, written in terms of the modified Bessel function of the first kind and the modified Bessel function of the second kind is 
+$$y = c_1 I_\nu (x) + c_2 K_\nu (x)$$
+where
+$$I_\nu (x) = i^{-\nu} J_\nu (ix)$$
+$$K_\nu (x) = \frac{\pi}{2} \frac{I_{-\nu} (x) - I_\nu (x)}{\sin \nu \pi}$$
+Another common equation is 
+$$y'' + \frac{1-2a}{x} y ' + \left(b^2 c^2 x^{2c -2} + \frac{a^2 - p^2 c^2}{x^2} \right)y = 0, \hspace{10pt} p \geq 0$$
+which has the solution
+$$y = x^a \left( c_1 J_p (bx^c ) + c_2 Y_p (bx^c) \right)$$
+\end{document}
