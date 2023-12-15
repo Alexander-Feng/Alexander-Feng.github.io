@@ -81,9 +81,27 @@
         }
         .center-div object {
             width: 60%; /* Adjust as needed */
-            height: 95%; /* Adjust as needed */
+            height: 1.1 * 100vh; /* Set the height to 1.1 times the viewport height */
         }
     </style>
+
+<script>
+  function adjustObjectWidth() {
+    const objectElement = document.querySelector('.center-div object');
+    const windowWidth = window.innerWidth;
+    
+    // Calculate the desired width based on the horizontal resolution or window width
+    const desiredWidth = windowWidth >= (window.screen.width * 0.6) ? (window.screen.width * 0.6) : windowWidth;
+    
+    // Set the width of the object
+    objectElement.style.width = `${desiredWidth}px`;
+  }
+
+  // Call the function initially and whenever the window is resized
+  window.addEventListener('resize', adjustObjectWidth);
+  window.addEventListener('DOMContentLoaded', adjustObjectWidth);
+</script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
