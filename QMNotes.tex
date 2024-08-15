@@ -1499,8 +1499,33 @@ Thus, we can simply express expected value in the form
 \[
 \langle S_z \rangle = \braket{\psi | \hat J_z | \psi}
 \]
-
-
-
+\chapter{Angular Momentum}
+\section{Rotations Do Not Commute and Neither Do the Generators}
+Consider the matrix equation
+\[
+	\begin{pmatrix} A'_x \\ A'_y \\ A'_z \end{pmatrix} = \begin{pmatrix} \cos \phi & - \sin \phi & 0 \\ \sin \phi & \cos \phi & 0 \\ 0& 0 & 1 \end{pmatrix}  \begin{pmatrix} A_x \\ A_y \\ A_z \end{pmatrix} 
+\] 
+which rotates the vector by an angle \(\phi\) counterclockwise about the z axis; we express this matrix as 
+\[
+\mathbb S (\phi \mathbf k) =  \begin{pmatrix} \cos \phi & - \sin \phi & 0 \\ \sin \phi & \cos \phi & 0 \\ 0& 0 & 1 \end{pmatrix}  \
+\] 
+For a small angle \(\Delta \phi\), we approximate this as
+\[
+	\mathbb S (\Delta \phi \mathbf k) = \begin{pmatrix} 1 - \Delta \phi ^2 / 2 & - \Delta \phi & 0 \\ \Delta \phi & 1 - \Delta \phi ^2 /2 & 0 \\ 0 & 0 & 1 \end{pmatrix}  
+\]
+rotations about other axes can be obtained from the cyclic substitution \(x \to y, y \to z, z \to y\). Thus, 
+\[
+	\mathbb S(\Delta \phi \mathbf i) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos \Delta \phi & - \sin \Delta \phi \\ 0 & \sin \Delta \phi & \cos \Delta \phi \end{pmatrix} \approx \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1- \Delta \phi^2 /2 & - \Delta \phi \\ 0 & \Delta \phi & 1 - \Delta \phi ^2 /2 \end{pmatrix} 
+\] 
+Similarly, 
+\[
+	\mathbb S ( \Delta \phi \mathbf j) = \begin{pmatrix} 1- \Delta \phi^2/2 & 0 & \Delta \phi \\ 0 & 1 & 0 \\ - \Delta \phi & 0 & 1 - \Delta \phi ^2 /2 \end{pmatrix} 
+\] 
+We know that the \(\mathbb S\) matrices are representation of the rotation operators. Thus
+\begin{align*}
+	\mathbb S ( \Delta \phi \mathbf i) \mathbb S (\Delta \phi \mathbf j) -\mathbb S ( \Delta \phi \mathbf j) \mathbb S (\Delta \phi \mathbf i) &= \begin{pmatrix} 0 & - \Delta \phi ^2 & 0 \\ \Delta \phi ^2 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} = \mathbb S (\Delta \phi ^2 \mathbf k) - \mathbb I \\
+	e^{i \hat J _x \phi / \hbar} e^{-i \hat J _y \phi / \hbar} &= \left( 1 - \frac{i \hat J_z \Delta \phi ^2}{\hbar} \right) -1 \\
+	\left\{ 1 - \frac{i \hat J_x \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_x \Delta \phi}{\hbar}\right)^2\right\} \left\{ 1 - \frac{i \hat J_y \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_y \Delta \phi}{\hbar}\right)^2\right\} - \left\{ 1 - \frac{i \hat J_y \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_y \Delta \phi}{\hbar}\right)^2\right\} \left\{ 1 - \frac{i \hat J_x \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_x \Delta \phi}{\hbar}\right)^2\right\} &=
+\end{align*}
 
 \end{document}
