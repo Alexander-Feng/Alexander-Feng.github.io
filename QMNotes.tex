@@ -1522,10 +1522,36 @@ Similarly,
 	\mathbb S ( \Delta \phi \mathbf j) = \begin{pmatrix} 1- \Delta \phi^2/2 & 0 & \Delta \phi \\ 0 & 1 & 0 \\ - \Delta \phi & 0 & 1 - \Delta \phi ^2 /2 \end{pmatrix} 
 \] 
 We know that the \(\mathbb S\) matrices are representation of the rotation operators. Thus
+\[
+\mathbb S ( \Delta \phi \mathbf i) \mathbb S (\Delta \phi \mathbf j) -\mathbb S ( \Delta \phi \mathbf j) \mathbb S (\Delta \phi \mathbf i) = \begin{pmatrix} 0 & - \Delta \phi ^2 & 0 \\ \Delta \phi ^2 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} = \mathbb S (\Delta \phi ^2 \mathbf k) - \mathbb I
+\]
+It follows that 
 \begin{align*}
-	\mathbb S ( \Delta \phi \mathbf i) \mathbb S (\Delta \phi \mathbf j) -\mathbb S ( \Delta \phi \mathbf j) \mathbb S (\Delta \phi \mathbf i) &= \begin{pmatrix} 0 & - \Delta \phi ^2 & 0 \\ \Delta \phi ^2 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} = \mathbb S (\Delta \phi ^2 \mathbf k) - \mathbb I \\
-	e^{i \hat J _x \phi / \hbar} e^{-i \hat J _y \phi / \hbar} &= \left( 1 - \frac{i \hat J_z \Delta \phi ^2}{\hbar} \right) -1 \\
-	\left\{ 1 - \frac{i \hat J_x \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_x \Delta \phi}{\hbar}\right)^2\right\} \left\{ 1 - \frac{i \hat J_y \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_y \Delta \phi}{\hbar}\right)^2\right\} - \left\{ 1 - \frac{i \hat J_y \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_y \Delta \phi}{\hbar}\right)^2\right\} \left\{ 1 - \frac{i \hat J_x \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_x \Delta \phi}{\hbar}\right)^2\right\} &=
+&\mathrel{\phantom{=}} \hat R(\Delta \phi \mathbf i) \hat R(\Delta \phi \mathbf j) - \hat R(\Delta \phi \mathbf j)\hat R(\Delta \phi \mathbf i)\\
+&=e^{i \hat J _x \phi / \hbar} e^{-i \hat J _y \phi / \hbar} - e^{i \hat J_y \phi / \hbar} e^{-i \hat J _x \phi / \hbar} \\
+\begin{split}
+&\approx \left\{ 1 - \frac{i \hat J_x \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_x \Delta \phi}{\hbar}\right)^2\right\} \left\{ 1 - \frac{i \hat J_y \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_y \Delta \phi}{\hbar}\right)^2\right\}\\
+& \qquad - \left\{ 1 - \frac{i \hat J_y \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_y \Delta \phi}{\hbar}\right)^2\right\} \left\{ 1 - \frac{i \hat J_x \Delta \phi}{\hbar} - \frac{1}{2}\left(\frac{\hat J_x \Delta \phi}{\hbar}\right)^2\right\} 
+\end{split}\\
+&\approx  \frac{(\hat J_y \hat J_x - \hat J_x \hat J_y)\Delta \phi^2 }{\hbar^2}\\
+&= \left( 1 - \frac{i \hat J_z \Delta \phi ^2}{\hbar} \right) -1
 \end{align*}
+\dfn{Commutator}{We define the commutator of two operators \(\hat A\) and \(\hat B\) to be 
+\[
+ [ \hat A, \hat B ] = \hat A \hat B - \hat B \hat A
+\]}
+Thus, we find that \[
+\hat J_x  \hat J_y - \hat J_y \hat J_x = i \hbar \hat J_z \implies [\hat J_x , \hat J_y ] = i \hbar \hat J_z
+\] 
+By cyclic substitution, 
+\[
+[\hat J_y, \hat J_z ] = i \hbar \hat J_x
+\] 
+\[
+[\hat J_z, \hat J_x] = i \hbar \hat J_y
+\] 
+These important commutation relations are general and also apply for orbital angular momentum operators. 
+%\section{Commuting Operators}
+
 
 \end{document}
