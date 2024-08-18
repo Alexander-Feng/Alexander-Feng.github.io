@@ -1551,7 +1551,88 @@ By cyclic substitution,
 [\hat J_z, \hat J_x] = i \hbar \hat J_y
 \] 
 These important commutation relations are general and also apply for orbital angular momentum operators. 
-%\section{Commuting Operators}
+\section{Commuting Operators}
+We know that the generators of rotation are Hermitian. Before continuing, consider two linear Hermitian operators \(\hat A\) and \(\hat B\) satisfying \[
+[\hat A , \hat B] = \hat A \hat B - \hat B \hat A = 0
+\] 
+Suppose \(\hat A\) only has a single eigenstate, \(\ket{a}\) with eigenvalue \(a\):
+\[
+\hat A \ket{a} = a \ket{a}
+\] 
+Then apply operator \(\hat B\) so that 
+\begin{align*}
+	\hat B \hat A \ket a &= \hat B a \ket a \\
+	\hat A (\hat B \ket a )&= a( \hat B \ket a)
+\end{align*}
+Thus we can conclude that 
+\[
+\hat B \ket a = b \ket a
+\] 
+for a constant \(b\), i.e., \(\ket a\) is also an eigenstate of \(\hat B\) with eigenvalue \(b\). Thus we can relabel the state \(\ket a\) as \(\ket{a, b}\). If there is more than one eigenstate of the operator \(\hat A\) with eigenvalue \(a\), we say that there is degeneracy. Obviously, if there is degeneracy the linear combinations of the eigenstates of \(\hat A\) can form the eigenstates of \(\hat B\). By the fundamental spectral theorem of linear algebra two Hermitian operators that commute have a complete set of eigenstates in common. 
+
+\section{The Eigenvalues and Eigenstates of Angular Momentum}
+Let \(\hat{\mathbf{J}}\) be a vector operator such that 
+\[
+\hat{\mathbf J} = \hat J_x  \mathbf i + \hat J_y  \mathbf j + \hat J_z  \mathbf k
+\] 
+and 
+\[
+\hat{\mathbf J}^2 = \hat{J}^2_x + \hat{J}^2_y + \hat{J}^2_z
+\] 
+We use the identity
+\[
+[\hat A, \hat B \hat C] = \hat B [\hat A, \hat C] + [\hat A, \hat B] \hat C
+\] 
+to obtain 
+\begin{align*}
+	[\hat J_z , \hat J_x^2 + \hat J_x^2 + \hat J_x^2] &= [\hat J_z, \hat J_x^2] + [\hat J_z, \hat J_y^2] + [\hat J_z, \hat J_z^2]\\
+							  &= \hat J_x [\hat J_z , \hat J_x] + [\hat J_z, \hat J_x] \hat J_x + \hat J_y [\hat J_z , \hat J_y] + [ \hat J_z , \hat J_y] \hat J_y \\
+							  &= i \hbar (\hat J_x \hat J_y + \hat J_y \hat J_x - \hat J_y \hat J_x - \hat J_x \hat J_y) = 0
+\end{align*}
+Thus, \(\hat{\mathbf J}^2\) and \(\hat J_z\) must have simultaneous eigenstates in common. We label the kets \(\ket{\lambda, m}\), where
+\begin{align*}
+	\hat{\mathbf J} \ket{\lambda, m} &= \lambda \hbar ^2 \ket{\lambda, m}\\
+	\hat J_z \ket{\lambda, m} &= m \hbar \ket{\lambda, m}
+\end{align*}
+We expect that \(\lambda \geq 0\) since it is the square of the magnitude of angular momentum. Consider
+\[
+\braket{\lambda, m | \hat{\mathbf J}^2 | \lambda, m} = \lambda \hbar ^2 \braket{\lambda, m | \lambda , m} =\lambda \hbar^2 
+\] 
+which would include a term
+\[
+\braket{\lambda, m | \hat{J}^2_x | \lambda, m} = \braket{\psi | \psi}
+\] 
+for \(\ket{\psi} = \hat J_x \ket{\lambda, m}\) and \(\bra{\psi} = \bra{\lambda, m} \hat J_x\) we can normalize \(\ket{\psi}\) by using \(\ket \psi = c \ket \phi \) for a complex constant \(c\) and \(\braket{\phi | \phi} = 1\). We see that \(\braket{\psi | \psi} = c^*c\braket{\phi | \phi} \geq 0\); this holds for also holds for \(\hat J_y\) and \(\hat J_z\), thus, \(\lambda \geq 0\).  \\
+%skipped spin 1 part
+It is convinient to introduce two operators \(\hat J_\pm = \hat J_x \pm i \hat J_y\) (which are not Hermitian). Observe that 
+\[
+	[\hat J_z, \hat J_\pm] = [\hat J_z, \hat J_x \pm i \hat J_y] = i \hbar \hat J_y \pm i ( -i \hbar \hat J_x) = \pm \hbar \hat J_\pm
+\] 
+By the commutation relation, 
+\begin{align*}
+	\hat J_z \hat J_+ \ket{\lambda, m} &= (\hat J_+ \hat J_z + \hbar \hat J_+) \ket{\lambda, m}\\
+					   &= (\hat J_+ m \hbar + \hbar \hat J_+) \ket{\lambda, m}\\
+					   &=(m+1)\hbar \hat J_+ \ket{\lambda, m}
+\end{align*}
+Thus, \(\hat J_+ \ket{\lambda, m}\) is an eigenstate of \(\hat J_z\). It's eigenvalue is \((m+1) \hbar\) so we refer to \(\hat J_+\) as a raising operator. Similarly, \(\hat J_- \ket{\lambda, m}\) is an eigenstate of \(\hat J_z\) with eigenvalue \((m-1) \hbar\), hence we refer to \(\hat J_-\) as a lowering operator. Observe that \([\hat J _\pm , \hat{\mathbf J}^2 ] = 0\) implies \(\hat J _ \pm \ket{\lambda, m}\) is an eigenvalue of \(\hat{\mathbf J^2}\) with eigenvalue \(\lambda \hbar ^2\). \\
+Physically, we expect that \(m^2 \leq \lambda\) since the square of the projection of the angular momentum should not exceed the the magnitude of \(\mathbf J^2\). Formally, 
+\begin{align*}
+	\braket{\lambda, m | (\hat J_x^2 + \hat J_y ^ 2) | \lambda, m} &\geq 0\\
+	\braket{\lambda, m | (\hat{\mathbf J}^2 - \hat J_z^2 )| \lambda, m} & \geq 0\\
+	(\lambda - m^2) \hbar ^2 \braket{\lambda, m | \lambda, m} &\geq 0
+\end{align*}
+Let's call the maximum \(m\) value \(j\). We must have 
+\[
+\hat J_+ \ket{\lambda, j} = 0
+\] 
+otherwise, \(\hat J_+\) would create a contradictory state \(\ket{\lambda, j+ 1}\). We see that 
+\begin{align*}
+	\hat J_- \hat J_+ \ket{\lambda, j} &= (\hat J_x - i \hat J_y) (\hat J_x + i \hat J _y) \ket{\lambda, j} \\
+					   &=(\hat J _x^2 + \hat J_y ^2 +i [\hat J_x, \hat J_y] )\ket{\lambda, j}\\
+					   &=(\hat{\mathbf J}^2 - \hat J_z^2 -\hbar \hat J_z)\ket{\lambda, j}\\
+					   &=(\lambda - j^2 - j) \hbar ^2 \ket{\lambda, j} = 0
+\end{align*}
+Thus, \(\lambda = j(j+1)\). Similarly for a minimum \(m\) value \(j'\), we have that \(\lambda = j'^2 - j'\). The solution to \(j^2 + j = j'^2 - j'\) is \(j' = -j\) and \(j' = j + 1\). The second result is contradictory, thus the minimum value must be \(-j\).  
 
 
 \end{document}
