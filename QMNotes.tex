@@ -1632,7 +1632,52 @@ otherwise, \(\hat J_+\) would create a contradictory state \(\ket{\lambda, j+ 1}
 					   &=(\hat{\mathbf J}^2 - \hat J_z^2 -\hbar \hat J_z)\ket{\lambda, j}\\
 					   &=(\lambda - j^2 - j) \hbar ^2 \ket{\lambda, j} = 0
 \end{align*}
-Thus, \(\lambda = j(j+1)\). Similarly for a minimum \(m\) value \(j'\), we have that \(\lambda = j'^2 - j'\). The solution to \(j^2 + j = j'^2 - j'\) is \(j' = -j\) and \(j' = j + 1\). The second result is contradictory, thus the minimum value must be \(-j\).  
+Thus, \(\lambda = j(j+1)\). Similarly for a minimum \(m\) value \(j'\), we have that \(\lambda = j'^2 - j'\). The solution to \(j^2 + j = j'^2 - j'\) is \(j' = -j\) and \(j' = j + 1\). The second result is contradictory, thus the minimum value must be \(-j\).  \\
+It follows that since you can lower an integral number of times, 
+\[
+j - (-j) = 2j \in \mathbb Z \implies j \in \left\{\frac{n}{2} : n \in \mathbb Z _{\geq 0}\right\}
+\] 
+Now, we change our notation so that
+\[
+\hat{\mathbf J}^2 \ket{j, m} = j(j+1)\hbar ^2 \ket{j, m}
+\]
+and 
+\[
+\hat J_z \ket{j, m} = m\hbar \ket{j, m}.
+\] 
+%add examples
+\section{The Matrix Elements of the Raising and Lowering Operators}
+We know that 
+\[
+\hat J _+ \ket{j, m} = c_+ \hbar \ket{j, m+1}
+\] 
+and
+\[
+\hat J_- \ket{j, m} = c_- \hbar \ket{j, m-1}
+\] 
+We have that
+\begin{align*}
+	\braket{j, m | \hat J_- \hat J _+ | j, m} &= c^*_+ c_+ \hbar ^2 \braket{j, m+1 | j, m+1} \\
+						  &= \braket{j, m | (\hat{\mathbf J}^2 - \hat J_z^2 - \hbar J_z)| j, m}\\
+						  &= [ j(j+1) - m^2 - m ] \hbar ^2 \braket{j, m | j, m}
+\end{align*}
+Assuming \(\braket{j, m | j, m} = \braket{j, m+1 | j, m+1}\), we can choose 
+\[
+c_+ = \sqrt{j(j+1) - m (m+1)}
+\] 
+Observe that \(c_+ = 0\) when \(m = j\), which makes physical sense. Similarly, we can establish that
+\[
+c_- = \sqrt{j(j+1) - m (m-1)} \] 
+Thus, we have the matrix elements of the raising and lowering operators using the \(\ket{j, m}\) states as a basis.  
+\[
+\braket{j, m' | \hat J _+ | j, m} = \sqrt{j(j+1) - m(m+1) } \hbar \braket{j, m' | j, m+1}
+\] 
+\[
+\braket{j, m' | \hat J _- | j, m} = \sqrt{j(j+1) - m(m-1) } \hbar \braket{j, m' | j, m-1}
+\] 
+
+
+
 
 
 \end{document}
