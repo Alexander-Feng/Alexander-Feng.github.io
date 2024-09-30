@@ -1221,8 +1221,11 @@ We know that \(|\braket{+ \mathbf z | + \mathbf x}|^2 =|\braket{- \mathbf z | + 
 We can use these values to calculate expected value \(\langle S_z \rangle\) and uncertainty \(\Delta S_z\):
 \begin{align*}
 	(\Delta S_z)^2 &= \langle ( S_z - \langle S_z \rangle ) ^2 \rangle\\
-		       &=\langle S_z \rangle^2 - \langle S_z \rangle ^2
+		       &=\langle S_z^2 \rangle - \langle S_z \rangle ^2
 \end{align*}
+\nt{Observe that in the spin-\(\frac{1}{2}\) case, \[
+		\langle S_z ^2 \rangle = \frac{\hbar ^2 }{4}
+\] }
 \ex{Expected Value and Uncertainty}{Consider the spin-\(\frac{1}{2}\) particle in state
 \[
 \ket \psi = \frac{1}{2}\ket{+ \mathbf z} + \frac{i \sqrt 3}{2}\ket{- \mathbf z}
@@ -1236,7 +1239,7 @@ To find the expected value,
 To find the uncertainty, we first find \(\langle S_z^2 \rangle\),
 \begin{align*}
 \langle S_z \rangle & = |\braket{+ \mathbf z | \psi}|^2 \left(\frac{\hbar}{2}\right)^2 + |\braket{- \mathbf z | \psi}|^2 \left(-\frac{\hbar}{2}\right)^2 \\
-		    &=\frac{1}{4}\frac{\hbar^2}{4} - \frac{3}{4}\frac{\hbar^2}{4} \\
+		    &=\frac{1}{4}\frac{\hbar^2}{4} + \frac{3}{4}\frac{\hbar^2}{4} \\
 		    &= \frac{\hbar^2}{4}
 \end{align*}
 It follows that 
@@ -1551,6 +1554,7 @@ By cyclic substitution,
 [\hat J_z, \hat J_x] = i \hbar \hat J_y
 \] 
 These important commutation relations are general and also apply for orbital angular momentum operators. 
+\nt{A Lie algebra over \(F\) is a \(F\)-vector space under the Lie bracket (which is the commutator in this case). The angular momentum vector space along with the commutator forms a Lie algebra. }
 \section{Commuting Operators}
 We know that the generators of rotation are Hermitian. Before continuing, consider two linear Hermitian operators \(\hat A\) and \(\hat B\) satisfying \[
 [\hat A , \hat B] = \hat A \hat B - \hat B \hat A = 0
@@ -1676,8 +1680,45 @@ Thus, we have the matrix elements of the raising and lowering operators using th
 \braket{j, m' | \hat J _- | j, m} = \sqrt{j(j+1) - m(m-1) } \hbar \braket{j, m' | j, m-1}
 \] 
 
-
-
-
-
+\section{Uncertainty Relations and Angular Momentum}
+We now show that the components of \(\hat{\mathbf{J}}\) are prohibited from having the same eigenstates. We use the Schwarz inequality
+\[
+\braket{\alpha | \alpha}\braket{\beta | \beta} \geq | \braket{\alpha | \beta}|^2
+\] 
+substituting
+\begin{align*}
+	\ket \alpha &= (\hat A - \braket{A}) \ket{\psi}\\
+	\ket \beta &= (\hat B - \braket{B}) \ket \psi
+\end{align*}
+Note that \(\braket A, \braket B \in \mathbb R\) since the operators and Hermitian, and 
+\begin{align*}
+	\braket{\alpha | \alpha} &= (\Delta A)^2 \\
+	\braket{\beta | \beta} &= (\Delta B)^2
+\end{align*}
+It follows that 
+\[
+\braket{\alpha | \beta} = \braket{\psi | (\hat A - \braket A ) ( \hat B - \braket B) | \psi}
+\]
+Now observe that all operators \(\hat O\) can be written as a linear combination of Hermitian operators \(\hat F\) and \(\hat G\):
+\[
+\hat O = \frac{\hat O + \hat O ^\dag}{2} + \frac{\hat O - \hat O ^\dag}{2} = \frac{\hat F}{2} + \frac{i \hat G}{2}
+\] 
+We take \(\hat O = (\hat A - \braket A )(\hat B - \braket B)\), and noting that
+\[
+	\hat O - \hat O ^\dag = [\hat A , \hat B] = i \hat C \implies \hat G = \hat C
+\] 
+Thus, 
+\begin{align*}
+	|\braket{\alpha | \beta}| ^2 &= \left| \frac{1}{2} \braket{\psi | \hat F | \psi} + \frac{i}{2}\braket{\psi | \hat C | \psi}\right|^2 \\
+				     &= \frac{|\braket{\psi | \hat F | \psi}| ^2}{4} + \frac{| \braket{\psi | \hat C | \psi}| ^2}{4} \geq \frac{|\braket{C}|^2}{4}
+\end{align*}
+using the fact that the expectation values of Hermitian operators are real. Finally, 
+\[
+	(\Delta A)^2 (\Delta B)^2 \geq \frac{| \braket C |^2}{4} \implies \Delta A \Delta B \geq \frac{|\braket C |}{2}
+\] 
+We have that 
+\[
+\Delta J_z \Delta J_y \geq \frac{\hbar}{2} | \braket{ J_z} |
+\] 
+This explains our earlier results. For example, if we have a definite value of \(J_z\), then the uncertainies of \(J_x\) and \(J_y\) must be nonzero. 
 \end{document}
