@@ -123,6 +123,9 @@
                         <a href="about1.html">About</a>
                     </li>
                     <li>
+		    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
                         <!--a href="post.html">Sample Post</a>
                     </li>
                     <li>
@@ -160,21 +163,37 @@
                     <p style="text-indent: 2em;">Numerical Integration is a computationally expensive task. Thus, I decided to create an analog integrator. To make the most simple integrator, I connected the waveform generator that sends the signal to a resistor, which goes to the negative terminal of the op-amp. Then, a capacitor connects the negative terminal to the output. The positive terminal of the op-amp is grounded. In the image, the red and white wires are 5 and -5 volts respectively; yellow is the waveform generator, and brown is the output. The signals I decided to try were the square wave, and two triangle waves. These are both shown in orange on the oscilloscope of the Analog Discovery 3 Waveforms software.</p>
                 </div>
             </div>
-	    <img src="https://github.com/Alexander-Feng/Alexander-Feng.github.io/blob/main/integratorfig1.jpg" alt="Descriptive Alt Text">
+	    <img src="integratorfig1.jpg" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+	    <p></p>
+	    <img src="integratorfig2.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+	    <p></p>
+	    <img src="integratorfig3.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+	    <p></p>
+	    <img src="integratorfig4.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p style="text-indent: 2em;">However, either through carrying out the Fourier transform calculations (where we find that the output is inversely proportional to frequency, multiplied by a negative constant) or looking at the graphs, we find that this circuit technically only integrates the negative signal. I decided to run this current output through an op-amp in an inverting configuration. Luckily, the op-amp IC I’m using has two op-amps for one package, so I simply had to use the other side. I used two extra resistors, one going from the initial output to the negative terminal; the second went from the negative terminal to the output. To increase the magnitude of the gain, I put the same value resistor in parallel to the latter one to halve the effective resistance. Additionally, I wanted to replace the resistor with a potentiometer, since we know that the time constant is dependent on that resistance, allowing us to adjust for different signal frequencies. The final circuit is shown below. We can first take a look at the symmetric triangle waves. The integral are parabolas concave up when the input voltage is increasing, and concave down when the signal voltage is decreasing. For the result of the triangle wave that only ramps up, the integral is a parabola for each section. Intuitively, the signal isn’t continuous so the integral isn’t differentiable. The square wave results in an output that is linear for each segment. These outputs all match the expected results, which is a good sign that our integrator is working correctly!</p>
+                </div>
+	    <img src="integratorfig5.jpg" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+	    <p></p>
+	    <img src="integratorfig6.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+	    <p></p>
+	    <img src="integratorfig7.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+	    <p></p>
+	    <img src="integratorfig8.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
         </div>
-    </article-->
+    </article>
 
     <!-- Main Content -->
-<div class="center-div">
-    <!--object data="path/to/your/document.pdf" type="application/pdf">
+<!--div class="center-div">
+    <object data="path/to/your/document.pdf" type="application/pdf">
       <embed src="path/to/your/document.pdf" type="application/pdf" />
     </object-->
     <!--object data="https://alexander-feng.github.io/ODEnotes.pdf"
  type="application/pdf">
         <embed src="https://alexander-feng.github.io/ODEnotes.pdf"
     	            type="application/pdf" />
-    </object-->
-  </div>
+    </object>
+  </div-->
 
     <!-- Footer -->
     <footer>
