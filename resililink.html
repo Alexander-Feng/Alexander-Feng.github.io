@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://alexander-feng.github.io/img/AFlogo.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Resililink</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        p {
+            font-family: 'Open Sans', sans-serif; /* replace 'Open Sans' with 'Lora' or any other font if that's what your title is using */
+            color: #fff;  /* This will make the paragraph text color white */
+        }
+
+        h2 {
+            color: #fff;  /* This will make the paragraph text color white */
+        }
+
+        body {
+            background-color: #304154;
+        }
+        
+
+        .intro-header {
+            background-position-y: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+
+        /* Pseudo-element for the desaturation overlay */
+        .intro-header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .center-div object {
+            width: 60%; /* Adjust as needed */
+            height: 95%; /* Adjust as needed */
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Parallax effect script -->
+    <script>
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop(),
+                dh = $(document).height(),
+                wh = $(window).height();
+            scrollPercent = (scroll / (dh - wh)) * 100;
+            $('.intro-header').css('background-position-y', -(scrollPercent * 1.1 - 50) + '%');
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <!--a class="navbar-brand" href="index.html">Start Bootstrap</a-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about1.html">About</a>
+                    </li>
+                    <li>
+		    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+                        <!--a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<style>
+  .header-link {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .header-link:hover {
+    color: #cccccc; /* Adjust this to the desired gray shade */
+  }
+</style>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('https://i.imgur.com/TJ2Db2z.png')">
+        <div class="container">
+            <div class="row" style="position: relative; z-index: 1;">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <a href="https://devpost.com/software/resilink" class="header-link"><h1>Resililink</h1></a>
+                        <hr class="small">
+                        <span class="subheading">Node-based Communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h2 class="section-heading">Overview</h2>
+<p style="text-indent: 2em;">Resililink is a node-based mesh network leveraging LoRa technology to facilitate communication in disaster-prone regions where traditional infrastructure, such as cell towers and internet services, is unavailable. The system is designed to operate in low-power environments and cover long distances, ensuring that essential communication can still occur when it is most needed. A key feature of this network is the integration of a "super" node equipped with satellite connectivity (via Skylo), which serves as the bridge between local nodes and a centralized server. The server processes the data and sends SMS notifications through Twilio to the intended recipients. Importantly, the system provides acknowledgment back to the originating node, confirming successful delivery of the message. This solution is aimed at enabling individuals to notify loved ones or emergency responders during critical times, such as natural disasters, when conventional communication channels are down.</p>
+<img src="resililinkfig1.jpg" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+<h2 class="section-heading">Project Inspiration</h2>
+<p style="text-indent: 2em;">The inspiration for Resililink came from personal experiences of communication outages during hurricanes. In each instance, we found ourselves cut off from vital resources like the internet, making it impossible to check on family members, friends, or receive updates on the situation. These moments of helplessness highlighted the urgent need for a resilient communication network that could function even when the usual infrastructure fails.</p>
+
+<h2 class="section-heading">System Capabilities</h2>
+<p style="text-indent: 2em;">Resililink is designed to be resilient, easy to deploy, and scalable, with several key features. First, the network is fast to set up, making it particularly useful in emergency situations. It supports dual connectivity, allowing communication both across the internet and in peer-to-peer fashion over long ranges, ensuring continuous data flow even in remote areas. Additionally, Resililink is cost-efficient; the nodes are inexpensive to produce, as each consists of a single LoRa radio and an ESP32 microcontroller, keeping hardware costs to a minimum.</p>
+
+<h2 class="section-heading">Development Approach</h2>
+<p style="text-indent: 2em;">The development of Resililink involved creating a custom communication protocol based on Protocol Buffers (protobufs) to efficiently manage data exchange. The core hardware components include LoRa radios, which provide long-range communication, and Skylo satellite connectivity, enabling nodes to transmit data to the internet using the MQTT protocol.</p>
+<p style="text-indent: 2em;">On the backend, a server hosted on Microsoft Azure handles the incoming MQTT messages, decrypts them, and forwards the relevant information to appropriate APIs, such as Twilio, for further processing and notification delivery. This seamless integration of satellite technology and cloud infrastructure ensures the reliability and scalability of the system.</p>
+<img src="resililinkfig2.png" alt="Descriptive Alt Text" style="width: 100%; box-sizing: border-box;">
+<h2 class="section-heading">Key Challenges</h2>
+<p style="text-indent: 2em;">Several challenges arose during the development process. One of the most significant issues was the lack of clear documentation for the AT commands on the Mutura evaluation board, which made it difficult to implement some of the core functionalities. Additionally, given the low-level nature of the project, debugging was particularly challenging, requiring in-depth tracing of system operations to identify and resolve issues. Another constraint was the limited packet size of 256 bytes, necessitating careful optimization to ensure efficient use of every byte of data transmitted.</p>
+
+<h2 class="section-heading">Achievements</h2>
+<p style="text-indent: 2em;">Despite these challenges, we successfully developed a fully functional network, complete with a working demonstration. The system proved capable of delivering messages over long distances with low power consumption, validating the concept and laying the groundwork for future enhancements.</p>
+
+<h2 class="section-heading">Lessons Learned</h2>
+<p style="text-indent: 2em;">Through this project, we gained a deeper understanding of computer networking, particularly in the context of low-power, long-range communication technologies like LoRa. The experience also provided valuable insights into the complexities of integrating satellite communication with terrestrial mesh networks.</p>
+
+<h2 class="section-heading">Future Plans for Resililink</h2>
+<p style="text-indent: 2em;">Looking ahead, we plan to explore ways to scale the network, focusing on enhancing its reliability and expanding its reach to serve larger geographic areas. We are also interested in further refining the underlying protocol and exploring new applications for Resililink beyond disaster recovery scenarios, such as in rural connectivity or industrial IoT use cases.</p>
+
+        </div>
+        </div>
+        </div>
+    </article>
+
+    <!-- Main Content -->
+<!--div class="center-div">
+    <object data="path/to/your/document.pdf" type="application/pdf">
+      <embed src="path/to/your/document.pdf" type="application/pdf" />
+    </object-->
+    <!--object data="https://alexander-feng.github.io/ODEnotes.pdf"
+ type="application/pdf">
+        <embed src="https://alexander-feng.github.io/ODEnotes.pdf"
+    	            type="application/pdf" />
+    </object>
+  </div-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <!--li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li-->
+                            <a href="https://github.com/Alexander-Feng">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">:D</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
